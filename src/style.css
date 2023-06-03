@@ -1,0 +1,512 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+:root{
+  --size-50: .5rem;
+  --size-100: 1rem;
+  --size-200: 1.2rem;
+  --size-300: 1.4rem;
+  --size-400: 1.6rem;
+  --size-500: 1.8rem;
+  --size-600: 2rem;
+  --size-700: 2.5rem;
+  --size-800: 3rem;
+  --size-900: 5rem;
+
+  --clr-neutral: hsl(0, 0%, 100%);
+
+  --clr-100: hsl(230,25%,95%);
+  --clr-150:  hsl(257, 7%, 63%);
+  --clr-200: hsl(180, 66%, 49%);
+  --clr-400: hsl(0, 87%, 67%);
+  --clr-700: hsl(257, 27%, 26%);
+  --clr-800: hsl(255, 11%, 22%);
+  --clr-900: hsl(260, 8%, 14%);
+
+  --ff-primary: 'Poppins', sans-serif;
+
+  --fw-primary: 500;
+  --fw-secondary: 700;
+
+  --fs-300: 1.4rem;
+  --fs-400: 1.6rem;
+  --fs-500: 1.8rem;
+  --fs-600: 2rem;
+  --fs-700: 2.5rem;
+  --fs-800: 3rem;
+  --fs-900: 5rem;
+
+  --fs-body: var(--fs-400);
+  --fs-primary-heading: var(--fs-900);
+  --fs-secondary-heading: var(--fs-700);
+  --fs-tertiary-heading: var(--fs-400);
+  --fs-input: var(--fs-400);
+}
+
+@media (min-width: 50em){
+  :root{
+    --fs-300: 1.6rem;
+    --fs-400: 1.8rem;
+    --fs-500: 2rem;
+    --fs-600: 2.5rem;
+    --fs-700: 3.5rem;
+    --fs-800: 5rem;
+    --fs-900: 6rem;
+  }
+}
+
+/* =====================
+        CSS RESET
+===================== */
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+*{
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: var(--fs-300);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =====================
+     UTILITY CLASSES
+===================== */
+
+.text-primary{
+  color: var(--clr-800);
+}
+
+.text-secondary{
+  color: var(--clr-100);
+}
+
+.text-white{
+  color: var(--clr-neutral)
+}
+
+.text-accent{
+  color: var(--clr-200)
+}
+
+.bg-primary{
+  background-color: var(--clr-100);
+}
+
+.bg-secondary{
+  background-color: var(--clr-700);
+}
+
+.bg-tertiary{
+  background-color: var(--clr-900);
+}
+
+.fs-primary-heading{
+  font-size: var(--fs-800);
+}
+
+.fs-secondary-heading{
+  font-size: var(--fs-600);
+}
+
+.mb-400{
+  margin-bottom: var(--size-400);
+}
+
+.mb-500{
+  margin-bottom: var(--size-500);
+}
+
+.mb-800{
+  margin-bottom: var(--size-800);
+}
+
+
+.mb-big{
+  margin-bottom: 100px;
+}
+
+.mb-large{
+  margin-bottom: 200px;
+}
+
+.padding-block-l{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.padding-block-xl{
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+@media (min-width: 50em) {
+  .text-center{
+    text-align: center;
+  }
+}
+
+/* =====================
+     GENERAL STYLING
+===================== */
+
+body{
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  color: var(--clr-150);
+  text-align: center;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3{
+  color: var(--clr-800);
+  font-weight: var(--fw-secondary);
+}
+
+h1{
+  font-size: var(--fs-primary-heading);
+  line-height: 1.1;
+}
+
+h2{
+  font-size: var(--fs-secondary-heading);
+  margin-bottom: var(--size-600);
+}
+
+h3{
+  font-size: var(--fs-tertiary-heading);
+  margin-bottom: var(--size-300);
+}
+
+a{
+  text-decoration: none;
+}
+
+.container{
+  max-width: 1110px;
+  padding-left: var(--size-600);
+  padding-right: var(--size-600);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-indented .container{
+  position: relative;
+  top: -114px;
+}
+
+.btn{
+  padding: .5em 1.5em;
+  background-color: var(--clr-200);
+  color: var(--clr-neutral);
+  display: inline-block;
+  border: 0;
+  border-radius: var(--size-50);
+}
+
+.btn-round{
+  border-radius: var(--size-600);
+}
+
+.shortener-wrap{
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-300);
+  padding: var(--size-900);
+  border-radius: var(--size-50);
+  background-image: url('../public/images/bg-shorten-desktop.svg');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--clr-700);
+}
+
+.shortener-wrap input{
+  flex-grow: 1;
+}
+
+.shortener-wrap > *{
+  padding: var(--size-300);
+}
+
+.link-wrap{
+  display: flex;
+  gap: var(--size-300);
+  flex-direction: column;
+}
+
+.link-wrap > div {
+  background-color:var(--clr-neutral);
+  gap: var(--size-300);
+  padding: var(--size-400);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: var(--size-50);
+}
+
+.cards{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-900);
+}
+
+.cards::after{
+  content: "";
+  display: block;
+  height: 100%;
+  width: 5px;
+  background-color: var(--clr-200);
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card{
+  font-size: var(--fs-300);
+  background-color: var(--clr-neutral);
+  padding: var(--size-600);
+  padding-top: calc(var(--size-900));
+  position: relative;
+  z-index: 10;
+  border-radius: var(--size-50);
+}
+
+.card div{
+  width: 50px;
+  position: absolute;
+  top:0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: var(--size-300);
+  border-radius: 50%;
+  background-color: var(--clr-900);
+}
+
+.article-cta{
+  background-image: url('../public/images/bg-boost-mobile.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+footer ul>li{
+  color: var(--clr-neutral);
+  margin-bottom: var(--size-500);
+  font-weight: var(--fw-secondary);
+}
+
+footer a{
+  color: var(--clr-150);
+}
+
+footer .social-links{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-600);
+}
+
+footer svg{
+  fill: var(--clr-neutral);
+}
+
+
+@media(min-width: 50em){
+  body{
+    text-align: left;
+  }
+
+  .article-header{
+    display: flex;
+  }
+  
+
+  .article-header-content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .hero-wrap{
+    width: 100%;
+  }
+
+  .hero-wrap img{
+    min-width: 100%;
+    width: 150%;
+  }
+
+  .shortener-wrap{
+    flex-direction: row;
+  }
+
+  .article-indented .container{
+    position: relative;
+    top: -79px;
+  }
+
+  .link-wrap div{
+    flex-direction: row;
+  }
+
+  .link-wrap p:first-child{
+    margin-right: auto;
+  }
+
+  .cards{
+    flex-direction: row;
+    margin-bottom: calc((var(--size-800) * 2));
+  }
+
+  .cards::after{
+    display: none;
+  }
+
+  .cards::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: var(--clr-200);
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .card{
+    position: relative;
+  }
+
+  .card:nth-child(2){
+    top: var(--size-800)
+  }
+
+  .card:nth-child(3){
+    top: calc(var(--size-800) * 2)
+  }
+
+  .card div{
+    left: var(--size-600);
+    transform: translateY(-50%);
+  }
+
+  .article-cta{
+    background-image: url('../public/images/bg-boost-desktop.svg');
+  }
+
+  footer .container{
+    display: flex;
+    align-items: start;
+    gap: var(--size-700);
+  }
+
+  footer .logo{
+    color: var(--clr-150);
+    margin-right: auto;
+  }
+
+  footer nav>ul{
+    display: flex;
+    gap: var(--size-900);
+  }
+}
+
+
+/* =====================
+       NAVIGATION
+===================== */
+
+header .container{
+  display: flex;
+  align-items: center;
+  gap: var(--size-400);
+}
+
+.logo{
+  font-size: var(--fs-700);
+  color: var(--clr-900);
+  font-weight: var(--fw-secondary);
+}
+
+nav{
+  margin-right: auto;
+}
+
+header nav ul{
+  display: flex;
+  align-items: center;
+  gap: var(--size-400);
+  margin-right: auto;
+}
+
+header a{
+  color: var(--clr-200);
+}
+
+header a:hover{
+  color: var(--clr-900);
+}
